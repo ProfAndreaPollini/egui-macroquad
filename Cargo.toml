@@ -7,27 +7,22 @@ license = "MIT/Apache-2.0"
 homepage = "https://github.com/optozorax/egui-macroquad"
 repository = "https://github.com/optozorax/egui-macroquad"
 description = "Bindings between egui and macroquad"
-readme="README.md"
+readme = "README.md"
 categories = ["gui", "game-development"]
 keywords = ["gui", "imgui", "immediate", "portable", "gamedev"]
-include = [
-  "LICENSE-APACHE",
-  "LICENSE-MIT",
-  "**/*.rs",
-  "Cargo.toml",
-]
+include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
 
 [dependencies]
-egui = "0.21.0"
-egui-miniquad = "0.14.0"
-macroquad = { version="0.3.25", default-features=false }
+egui = "0.22.0"
+egui-miniquad = { git = "https://github.com/not-fl3/egui-miniquad.git", branch = "miniquad_0.4" }
+macroquad = { version = "0.4.2", default-features = false }
 
 [features]
 default = ["audio"]
 audio = ["macroquad/audio"]
 
 [dev-dependencies]
-egui_demo_lib = "0.21.0"
+egui_demo_lib = "0.22.0"
 
 [profile.release]
 opt-level = 2
